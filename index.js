@@ -1,5 +1,6 @@
  
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const { createCanvas, loadImage } = require("canvas");
 const QuoteGenerate = require("./quote-generate.js"); 
@@ -112,7 +113,7 @@ app.post("/quote/generate", async (req, res) => {
   }
 });
 
-//app.use("/", express.static(path.join(__dirname, "/working.html")));
+app.use("/", express.static(path.join(__dirname, "/working.html")));
 
 // 🟢 Start server
 const PORT = process.env.PORT || 10000;
@@ -121,3 +122,5 @@ app.listen(PORT, () => {
     `🚀 Quote generator API running on http://localhost:${PORT}/quote/generate`
   );
 });
+
+     module.exports = app;
