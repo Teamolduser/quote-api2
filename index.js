@@ -112,8 +112,10 @@ app.post("/quote/generate", async (req, res) => {
   }
 });
 
+app.use("/", express.static(path.join(__dirname, "/working.html")));
+
 // 🟢 Start server
-const PORT = process.env.PORT || 4887;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(
     `🚀 Quote generator API running on http://localhost:${PORT}/quote/generate`
