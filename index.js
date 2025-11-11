@@ -112,7 +112,7 @@ app.post("/quote/generate", async (req, res) => {
   }
 });
 
-app.use("/", express.static(path.join(__dirname, "/working.html")));
+//app.use("/", express.static(path.join(__dirname, "/working.html")));
 
 // 🟢 Start server
 const PORT = process.env.PORT || 10000;
